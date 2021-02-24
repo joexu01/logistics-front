@@ -131,6 +131,13 @@ export const constantRoutes = [
         name: '制造商-发货记录上链',
         meta: { title: '制造商-发货记录上链', icon: 'example', affix: false },
         hidden: true
+      },
+      {
+        path: 'qrcode',
+        component: () => import('@/views/manufacturer/generateQRCode'),
+        name: '制造商-生成二维码',
+        meta: { title: '制造商-生成二维码', icon: 'example', affix: false },
+        hidden: true
       }
     ]
   },
@@ -161,6 +168,13 @@ export const constantRoutes = [
       },
       {
         path: 'update',
+        component: () => import('@/views/logistics/updateLogisticsRecord'),
+        name: '物流公司-物流记录上链',
+        meta: { title: '物流公司-物流记录上链', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'user/update/:id',
         component: () => import('@/views/logistics/updateLogisticsRecord'),
         name: '物流公司-物流记录上链',
         meta: { title: '物流公司-物流记录上链', icon: 'example', affix: false },
@@ -251,14 +265,49 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/order/:id',
+    path: '/regulator',
     component: Layout,
     children: [
       {
         path: '',
-        component: () => import('@/views/manufacturer/queryOrderInfo'),
-        name: '查询订单详情',
-        meta: { title: '查询订单详情', icon: 'example', affix: false },
+        component: () => import('@/views/regulator/index'),
+        name: 'regulator',
+        meta: { title: '监管机构', icon: 'eye-open', affix: false },
+        hidden: false
+      },
+      {
+        path: 'product',
+        component: () => import('@/views/regulator/queryProdInfo'),
+        name: '监管机构-查询批次信息',
+        meta: { title: '监管机构-查询批次信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'tracking',
+        component: () => import('@/views/regulator/queryLogisticsInfo'),
+        name: '监管机构-查询物流记录',
+        meta: { title: '监管机构-查询物流记录', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'private',
+        component: () => import('@/views/regulator/queryLogisticsInfoFull'),
+        name: '监管机构-查询物流关联人员信息',
+        meta: { title: '监管机构-查询物流关联人员信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'public/product/:id',
+        component: () => import('@/views/regulator/queryProdInfo'),
+        name: '公众查询-批次信息',
+        meta: { title: '公众查询-批次信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'public/tracking/:id',
+        component: () => import('@/views/regulator/queryLogisticsInfo'),
+        name: '公众查询-物流记录',
+        meta: { title: '公众查询-物流记录', icon: 'example', affix: false },
         hidden: true
       }
     ]

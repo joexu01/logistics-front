@@ -20,6 +20,10 @@
           <router-link :to="'/manufacturer/tracking'" class="el-button el-button--primary">
             物流信息
           </router-link>
+
+          <router-link :to="'/manufacturer/qrcode'" class="el-button el-button--primary">
+            生成追溯二维码
+          </router-link>
         </el-row>
 
       </el-card>

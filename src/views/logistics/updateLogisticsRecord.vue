@@ -9,6 +9,7 @@
       <el-form-item label="物流编号">
         <el-input
           v-model="form.tracking_num"
+          :disabled="input_disabled"
         />
       </el-form-item>
 
@@ -60,7 +61,16 @@ export default {
         operator: '',
         status: '',
         tracking_num: ''
-      }
+      },
+      input_disabled: false
+    }
+  },
+  created() {
+    const id = this.$route.params && this.$route.params.id
+    if (id > 0) {
+      console.log(id)
+      this.form.tracking_num = id
+      this.input_disabled = true
     }
   },
   methods: {

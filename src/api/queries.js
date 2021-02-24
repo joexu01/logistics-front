@@ -23,3 +23,27 @@ export function getLogisticsInfo(org, logisticsID) {
     params: {}
   })
 }
+
+export function getLogisticsInfoPri(logisticsID) {
+  return request({
+    url: '/regulator/private/' + logisticsID,
+    method: 'get',
+    params: {}
+  })
+}
+
+export function getQRCode(orderID, collection) {
+  return request({
+    url: '/qrcode/order/' + orderID,
+    method: 'get',
+    params: { collection }
+  })
+}
+
+export function getDefaultImage() {
+  return request({
+    url: '/qrcode/default',
+    method: 'get',
+    params: {}
+  })
+}
