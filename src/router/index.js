@@ -74,44 +74,192 @@ export const constantRoutes = [
       {
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        name: '使用说明',
+        meta: { title: '使用说明', icon: 'dashboard', affix: true }
       }
     ]
   },
   {
-    path: '/certs/generate',
+    path: '/manufacturer',
     component: Layout,
     children: [
       {
-        path: 'generate',
-        component: () => import('@/views/certs/index'),
-        name: 'certs',
-        meta: { title: '一键生成三方证书', icon: 'component', affix: true }
+        path: '',
+        component: () => import('@/views/manufacturer/index'),
+        name: 'manufacturer',
+        meta: { title: '制造商', icon: 'example', affix: false },
+        hidden: false
+      },
+      {
+        path: 'product',
+        component: () => import('@/views/manufacturer/queryProdInfo'),
+        name: '制造商-查询批次信息',
+        meta: { title: '制造商-查询批次信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'order',
+        component: () => import('@/views/manufacturer/queryOrderInfo'),
+        name: '制造商-查询订单详情',
+        meta: { title: '制造商-查询订单详情', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'tracking',
+        component: () => import('@/views/manufacturer/queryLogisticsInfo'),
+        name: '制造商-查询物流信息',
+        meta: { title: '制造商-查询物流信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'new/product',
+        component: () => import('@/views/manufacturer/newProdInfo'),
+        name: '制造商-产品批次信息上链',
+        meta: { title: '制造商-产品批次信息上链', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'new/order',
+        component: () => import('@/views/manufacturer/newOrder'),
+        name: '制造商-新建订单',
+        meta: { title: '制造商-新建订单', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'new/send',
+        component: () => import('@/views/manufacturer/sendGoodsOff'),
+        name: '制造商-发货记录上链',
+        meta: { title: '制造商-发货记录上链', icon: 'example', affix: false },
+        hidden: true
       }
     ]
   },
   {
-    path: '/certs/view',
+    path: '/logistics',
     component: Layout,
     children: [
       {
-        path: 'view',
-        component: () => import('@/views/certs/download'),
-        name: 'view',
-        meta: { title: '下载证书', icon: 'component', affix: true }
+        path: '',
+        component: () => import('@/views/logistics/index'),
+        name: 'logistics',
+        meta: { title: '物流公司', icon: 'drag', affix: false },
+        hidden: false
+      },
+      {
+        path: 'product',
+        component: () => import('@/views/logistics/queryProdInfo'),
+        name: '物流公司-查询批次信息',
+        meta: { title: '物流公司-查询批次信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'tracking',
+        component: () => import('@/views/logistics/queryLogisticsInfo'),
+        name: '物流公司-查询物流记录',
+        meta: { title: '物流公司-查询物流记录', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'update',
+        component: () => import('@/views/logistics/updateLogisticsRecord'),
+        name: '物流公司-物流记录上链',
+        meta: { title: '物流公司-物流记录上链', icon: 'example', affix: false },
+        hidden: true
       }
     ]
   },
   {
-    path: '/server/start',
+    path: '/retailer1',
     component: Layout,
     children: [
       {
-        path: 'runServer',
-        component: () => import('@/views/server/run'),
-        name: 'view',
-        meta: { title: '运行服务', icon: 'example', affix: true }
+        path: '',
+        component: () => import('@/views/retailer1/index'),
+        name: 'retailer1',
+        meta: { title: '零售商1', icon: 'tree', affix: false },
+        hidden: false
+      },
+      {
+        path: 'product',
+        component: () => import('@/views/retailer1/queryProdInfo'),
+        name: '零售商1-查询批次信息',
+        meta: { title: '零售商1-查询批次信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'tracking',
+        component: () => import('@/views/retailer1/queryLogisticsInfo'),
+        name: '零售商1-查询物流记录',
+        meta: { title: '零售商1-查询物流记录', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'order',
+        component: () => import('@/views/retailer1/queryOrderInfo'),
+        name: '零售商1-查询订单详情',
+        meta: { title: '零售商1-查询订单详情', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'sign',
+        component: () => import('@/views/retailer1/signForGoods'),
+        name: '零售商1-签收货物',
+        meta: { title: '零售商1-签收货物', icon: 'example', affix: false },
+        hidden: true
+      }
+    ]
+  },
+  {
+    path: '/retailer2',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/retailer2/index'),
+        name: 'retailer1',
+        meta: { title: '零售商2', icon: 'tree', affix: false },
+        hidden: false
+      },
+      {
+        path: 'product',
+        component: () => import('@/views/retailer2/queryProdInfo'),
+        name: '零售商2-查询批次信息',
+        meta: { title: '零售商2-查询批次信息', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'tracking',
+        component: () => import('@/views/retailer2/queryLogisticsInfo'),
+        name: '零售商2-查询物流记录',
+        meta: { title: '零售商2-查询物流记录', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'order',
+        component: () => import('@/views/retailer2/queryOrderInfo'),
+        name: '零售商2-查询订单详情',
+        meta: { title: '零售商2-查询订单详情', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'sign',
+        component: () => import('@/views/retailer2/signForGoods'),
+        name: '零售商2-签收货物',
+        meta: { title: '零售商2-签收货物', icon: 'example', affix: false },
+        hidden: true
+      }
+    ]
+  },
+  {
+    path: '/order/:id',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/manufacturer/queryOrderInfo'),
+        name: '查询订单详情',
+        meta: { title: '查询订单详情', icon: 'example', affix: false },
+        hidden: true
       }
     ]
   }
