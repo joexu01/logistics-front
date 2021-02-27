@@ -50,7 +50,7 @@
           操作人员：{{ activity.operator }}
 
           <el-collapse style="margin-top: 15px">
-            <el-collapse-item title="操作节点ID (Peer ID)" name="1">
+            <el-collapse-item title="MSP ID" name="1">
               <div>{{ activity.peer_id }}</div>
             </el-collapse-item>
 
