@@ -105,6 +105,13 @@ export const constantRoutes = [
         hidden: true
       },
       {
+        path: 'order/unaccepted',
+        component: () => import('@/views/manufacturer/getOrderRequests'),
+        name: '制造商-查询订单请求',
+        meta: { title: '制造商-查询订单请求', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
         path: 'tracking',
         component: () => import('@/views/manufacturer/queryLogisticsInfo'),
         name: '制造商-查询物流信息',
@@ -220,6 +227,13 @@ export const constantRoutes = [
         name: '零售商1-签收货物',
         meta: { title: '零售商1-签收货物', icon: 'example', affix: false },
         hidden: true
+      },
+      {
+        path: 'new/order',
+        component: () => import('@/views/retailer1/createOrder'),
+        name: '零售商1-新建订单',
+        meta: { title: '零售商1-新建订单', icon: 'example', affix: false },
+        hidden: true
       }
     ]
   },
@@ -230,7 +244,7 @@ export const constantRoutes = [
       {
         path: '',
         component: () => import('@/views/retailer2/index'),
-        name: 'retailer1',
+        name: 'retailer2',
         meta: { title: '零售商2', icon: 'tree', affix: false },
         hidden: false
       },
@@ -260,6 +274,13 @@ export const constantRoutes = [
         component: () => import('@/views/retailer2/signForGoods'),
         name: '零售商2-签收货物',
         meta: { title: '零售商2-签收货物', icon: 'example', affix: false },
+        hidden: true
+      },
+      {
+        path: 'new/order',
+        component: () => import('@/views/retailer2/createOrder'),
+        name: '零售商2-新建订单',
+        meta: { title: '零售商2-新建订单', icon: 'example', affix: false },
         hidden: true
       }
     ]

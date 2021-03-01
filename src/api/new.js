@@ -39,3 +39,20 @@ export function signForGoods(org, trackingID, data) {
     data
   })
 }
+
+export function acceptOrder(id, collection, data) {
+  return request({
+    url: '/manufacturer/order/accept/' + id,
+    method: 'put',
+    params: { collection },
+    data
+  })
+}
+
+export function rejectOrder(id, collection) {
+  return request({
+    url: '/manufacturer/order/reject/' + id,
+    method: 'get',
+    params: { collection }
+  })
+}

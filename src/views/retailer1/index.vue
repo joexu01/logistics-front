@@ -30,6 +30,9 @@
         </div>
 
         <el-row>
+          <router-link :to="'/retailer1/new/order'" class="el-button el-button--success">
+            新建订单
+          </router-link>
 
           <router-link :to="'/retailer1/sign'" class="el-button el-button--warning">
             货物签收记录上链
