@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { getOrderInfo } from '@/api/queries'
+import { getOrderInfoRetailer } from '@/api/queries'
 
 export default {
   name: 'QueryOrderInfo',
@@ -90,7 +90,7 @@ export default {
       console.log('submit!')
       this.$refs['form'].validate((valid) => {
         if (valid) {
-          getOrderInfo('retailer1', this.form.order_id, '').then(response => {
+          getOrderInfoRetailer('retailer1', this.form.order_id, '').then(response => {
             this.order_info.batch_number = response.data.batch_number
             this.order_info.tracking_number = response.data.tracking_number
             this.order_info.sorter = response.data.sorter
@@ -102,7 +102,7 @@ export default {
       })
     },
     fetchData(id, collection) {
-      getOrderInfo('retailer1', id, '').then(response => {
+      getOrderInfoRetailer('retailer1', id, '').then(response => {
         this.order_info.batch_number = response.data.batch_number
         this.order_info.tracking_number = response.data.tracking_number
         this.order_info.sorter = response.data.sorter

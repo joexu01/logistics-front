@@ -10,6 +10,13 @@ export function getProdInfo(org, batchID) {
 
 export function getOrderInfo(org, orderID, collection) {
   return request({
+    url: '/' + org + '/order/read/' + orderID,
+    method: 'get',
+    params: { collection }
+  })
+}
+export function getOrderInfoRetailer(org, orderID, collection) {
+  return request({
     url: '/' + org + '/order/' + orderID,
     method: 'get',
     params: { collection }
@@ -45,5 +52,13 @@ export function getDefaultImage() {
     url: '/qrcode/default',
     method: 'get',
     params: {}
+  })
+}
+
+export function getUnacceptedOrders(collection) {
+  return request({
+    url: '/manufacturer/order/unaccepted',
+    method: 'get',
+    params: { collection }
   })
 }
