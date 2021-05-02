@@ -15,6 +15,13 @@ export function getOrderInfo(org, orderID, collection) {
     params: { collection }
   })
 }
+export function getOrderInfoRetailer(org, orderID, collection) {
+  return request({
+    url: '/' + org + '/order/' + orderID,
+    method: 'get',
+    params: { collection }
+  })
+}
 
 export function getLogisticsInfo(org, logisticsID) {
   return request({
