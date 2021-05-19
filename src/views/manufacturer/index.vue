@@ -18,6 +18,12 @@
           </router-link>
         </el-row>
 
+        <el-row style="margin-top: 15px">
+          <router-link :to="'/manufacturer/qrcode'" class="el-button el-button--primary">
+            生成追溯二维码
+          </router-link>
+        </el-row>
+
       </el-card>
 
       <el-card style="margin-top: 35px">
@@ -28,18 +34,11 @@
           <router-link :to="'/manufacturer/tracking'" class="el-button el-button--primary">
             物流信息
           </router-link>
-
-          <router-link :to="'/manufacturer/qrcode'" class="el-button el-button--primary">
-            生成追溯二维码
-          </router-link>
-        </el-row>
-
-        <el-row style="margin-top: 15px">
           <router-link :to="'/manufacturer/product'" class="el-button el-button--primary">
             批次信息
           </router-link>
-        </el-row>
 
+        </el-row>
       </el-card>
 
       <el-card style="margin-top: 35px">
